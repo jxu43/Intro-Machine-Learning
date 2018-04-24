@@ -26,14 +26,13 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
-
-
-
-
-
-
-
+for index = 1:size(X,2)
+	mn = mean(X(:,index));
+	s = std(X(:,index));
+	X_norm(:,index) = (X_norm(:,index) - mn) / s;
+	mu(1, index) = mn;
+	sigma(1, index) = s;
+end
 % ============================================================
 
 end
