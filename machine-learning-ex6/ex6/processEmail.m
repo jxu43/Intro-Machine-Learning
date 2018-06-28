@@ -98,13 +98,11 @@ while ~isempty(email_contents)
     %
 
 
-
-
-
-
-
-
-
+    %此时已经把单个str提取出来， 只需要和vocabList进行比较，看是否有对应的word在vocabList中
+    idx = strmatch(str, vocabList, 'exact');
+    if ~isempty(idx)
+        word_indices = [word_indices; idx];
+    end
 
     % =============================================================
 
